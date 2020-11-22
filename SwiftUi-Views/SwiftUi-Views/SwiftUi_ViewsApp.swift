@@ -12,6 +12,7 @@ struct SwiftUi_ViewsApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .previewLayout(.fixed(width: 568, height: 320))
         }
     }
 }
