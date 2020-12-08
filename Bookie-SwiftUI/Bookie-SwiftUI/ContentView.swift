@@ -13,9 +13,11 @@ struct ContentView: View {
             Image(systemName: "book")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 100, height: 80, alignment: .center)
-            Text("Hello, world!")
-                .padding()
+                .frame(width: 100, height: 80)
+                .font(Font.title.weight(.light))
+                .foregroundColor(.secondary)
+            Text("Title")
+                .font(.title2)
         }
     }
 }
