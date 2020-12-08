@@ -11,6 +11,7 @@ struct ContentView: View {
     var body: some View {
         HStack{
             Image(systemName: "book")
+                .resizable()
             Text("Hello, world!")
                 .padding()
         }
