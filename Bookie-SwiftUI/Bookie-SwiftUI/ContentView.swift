@@ -12,6 +12,8 @@ struct ContentView: View {
         HStack{
             Image(systemName: "book")
                 .resizable()
+                .scaledToFit()
+                .frame(width: 100, height: 80, alignment: .center)
             Text("Hello, world!")
                 .padding()
         }
@@ -23,3 +25,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+ 
