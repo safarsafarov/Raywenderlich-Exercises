@@ -8,5 +8,9 @@
 struct Book {
     let title: String
     let author: String
-    let image: String 
+    
+    init(title: String = "Title", author: String = "Author") {
+        self.title = title
+        self.author = author
+    }
 }
