@@ -9,6 +9,8 @@ import SwiftUI
 
 extension Book {
     struct Image: View {
+        
+        let title: String
         var body: some View {
             SwiftUI.Image(systemName: "book")
                 .resizable()
