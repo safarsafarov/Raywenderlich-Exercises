@@ -30,8 +30,8 @@ struct Book_Previews: PreviewProvider {
     static var previews: some View {
         VStack{
             Book.Image(title: Book().title)
-            Book.image(title: "")
-            Book.image(title: "")
+            Book.Image(title: "")
+            Book.Image(title: "📖")
         }
     }
 }
