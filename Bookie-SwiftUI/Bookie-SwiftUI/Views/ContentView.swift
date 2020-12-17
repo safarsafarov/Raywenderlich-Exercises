@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  Bookie-SwiftUI
-//
-//  Created by Safar Safarov on 2020/12/8.
-//
-
 import SwiftUI
 
 struct ContentView: View {
