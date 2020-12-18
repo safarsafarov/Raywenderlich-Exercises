@@ -2,10 +2,12 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack{
-            Book.Image(title: Book().title)
-            Text("Title")
-                .font(.title2)
+        Group {
+            HStack{
+                Book.Image(title: Book().title)
+                Text("Title")
+                    .font(.title2)
+            }
         }
     }
 }
