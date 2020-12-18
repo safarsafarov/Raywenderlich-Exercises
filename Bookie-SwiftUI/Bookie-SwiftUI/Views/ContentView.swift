@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        HStack{
+        VStack{
             Book.Image(title: Book().title)
             Text("Title")
                 .font(.title2)
