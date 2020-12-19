@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		F69C51582581222300C7FB55 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C51572581222300C7FB55 /* Book.swift */; };
 		F69C515D25814DA200C7FB55 /* BookViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C515C25814DA200C7FB55 /* BookViews.swift */; };
-		F6BC18AE258CEF7300EF8655 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BC18AD258CEF7300EF8655 /* BookView.swift */; };
+		F6BC18B1258CF7E900EF8655 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BC18B0258CF7E900EF8655 /* Library.swift */; };
 		F6D38DE3257EB43600BBD30A /* Bookie_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D38DE2257EB43600BBD30A /* Bookie_SwiftUIApp.swift */; };
 		F6D38DE5257EB43600BBD30A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D38DE4257EB43600BBD30A /* ContentView.swift */; };
 		F6D38DE7257EB43800BBD30A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6D38DE6257EB43800BBD30A /* Assets.xcassets */; };
@@ -19,7 +19,7 @@
 /* Begin PBXFileReference section */
 		F69C51572581222300C7FB55 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		F69C515C25814DA200C7FB55 /* BookViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViews.swift; sourceTree = "<group>"; };
-		F6BC18AD258CEF7300EF8655 /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
+		F6BC18B0258CF7E900EF8655 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		F6D38DDF257EB43600BBD30A /* Bookie-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bookie-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6D38DE2257EB43600BBD30A /* Bookie_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookie_SwiftUIApp.swift; sourceTree = "<group>"; };
 		F6D38DE4257EB43600BBD30A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,7 +44,6 @@
 			children = (
 				F6D38DE4257EB43600BBD30A /* ContentView.swift */,
 				F69C515C25814DA200C7FB55 /* BookViews.swift */,
-				F6BC18AD258CEF7300EF8655 /* BookView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -74,6 +73,7 @@
 				F6D38DEB257EB43800BBD30A /* Info.plist */,
 				F6D38DE8257EB43800BBD30A /* Preview Content */,
 				F69C51572581222300C7FB55 /* Book.swift */,
+				F6BC18B0258CF7E900EF8655 /* Library.swift */,
 			);
 			path = "Bookie-SwiftUI";
 			sourceTree = "<group>";
@@ -159,7 +159,7 @@
 				F6D38DE3257EB43600BBD30A /* Bookie_SwiftUIApp.swift in Sources */,
 				F69C51582581222300C7FB55 /* Book.swift in Sources */,
 				F69C515D25814DA200C7FB55 /* BookViews.swift in Sources */,
-				F6BC18AE258CEF7300EF8655 /* BookView.swift in Sources */,
+				F6BC18B1258CF7E900EF8655 /* Library.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
