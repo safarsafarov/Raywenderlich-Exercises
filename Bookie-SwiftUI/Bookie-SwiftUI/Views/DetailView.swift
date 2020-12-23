@@ -9,9 +9,11 @@ import SwiftUI
 
 struct DetailView: View {
     let book: Book
+    var size: CGFloat?
     
     var body: some View {
         Book.Image(title: book.title)
+            .frame(size: nil)
     }
 }
 
