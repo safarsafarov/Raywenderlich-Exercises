@@ -6,6 +6,7 @@ struct ContentView: View {
             List(Library().sortedBooks, id: \.title) { book in
                 BookRow(book: book)
             }
+            .navigationTitle("My Library")
         }
     }
 }
