@@ -22,6 +22,7 @@ struct BookRow: View {
                 Book.Image(title: book.title)
                 
                 TitleAndAuthorStack(book: book)
+                    .lineLimit(1)
             }
         }
     }
@@ -34,16 +35,4 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 
-struct TitleAndAuthorStack: View {
-    let book: Book
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text(book.title)
-                .font(.title2)
-            Text(book.author)
-                .font(.title3)
-                .foregroundColor(.secondary)
-        }
-        .lineLimit(1)
-    }
-}
+

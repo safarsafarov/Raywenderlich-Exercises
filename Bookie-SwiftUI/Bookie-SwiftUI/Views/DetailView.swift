@@ -9,11 +9,11 @@ import SwiftUI
 
 struct DetailView: View {
     let book: Book
-    var size: CGFloat?
     
     var body: some View {
+        TitleAndAuthorStack(book: book)
         Book.Image(title: book.title)
-            .frame(size: nil)
+        Spacer()
     }
 }
 
