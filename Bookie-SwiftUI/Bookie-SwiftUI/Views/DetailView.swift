@@ -22,3 +22,4 @@ struct DetailView_Previews: PreviewProvider {
         DetailView(book: .init())
     }
 }
+
