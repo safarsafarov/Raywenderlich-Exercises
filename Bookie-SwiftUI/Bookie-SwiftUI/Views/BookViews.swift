@@ -20,6 +20,7 @@ struct TitleAndAuthorStack: View {
     }
 }
 
+
 extension Book {
     struct Image: View {
         let title: String
