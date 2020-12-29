@@ -10,6 +10,7 @@ struct TitleAndAuthorStack: View {
                     book: book,
                     titleFont: .title,
                     authorFont: .title2
+                    
                 )
             Text(book.title)
                 .font(titleFont)
