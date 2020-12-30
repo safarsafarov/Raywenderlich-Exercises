@@ -21,6 +21,8 @@ struct TitleAndAuthorStack: View {
     }
 }
 
+// changes
+
 
 extension Book {
     struct Image: View {
