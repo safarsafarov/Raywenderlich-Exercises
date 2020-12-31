@@ -32,6 +32,7 @@ extension Book {
         var body: some View {
             let symbol = SwiftUI.Image(title: title)
                 ?? .init(systemName: "book")
+          
             
             symbol
                 .resizable()
@@ -58,6 +59,8 @@ struct Book_Previews: PreviewProvider {
         }
     }
 }
+
+
 
 extension Image {
     init?(title: String) {
