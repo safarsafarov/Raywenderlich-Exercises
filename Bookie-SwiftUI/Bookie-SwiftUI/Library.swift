@@ -3,7 +3,7 @@
 //  Bookie-SwiftUI
 //
 //  Created by Safar Safarov on 2020/12/18.
-//
+import class UIKit.UIImage
 struct Library {
   var sortedBooks: [Book] { booksCache }
 
@@ -21,4 +21,8 @@ struct Library {
     .init(title: "Drawing People", author: "Barbara Bradley"),
     .init(title: "What to Say When You Talk to Yourself", author: "Shad Helmstetter")
   ]
+    
+    
+    
+    var uiImage: [Book: UIImage] = [:]
 }
