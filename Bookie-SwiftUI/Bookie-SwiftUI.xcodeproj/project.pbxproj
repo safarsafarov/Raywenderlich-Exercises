@@ -10,6 +10,7 @@
 		F6778E42258DABBC000157D7 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6778E41258DABBC000157D7 /* DetailView.swift */; };
 		F69C51582581222300C7FB55 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C51572581222300C7FB55 /* Book.swift */; };
 		F69C515D25814DA200C7FB55 /* BookViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C515C25814DA200C7FB55 /* BookViews.swift */; };
+		F6BAB25825A419AE00343D89 /* PHPickerViewController.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BAB25725A419AE00343D89 /* PHPickerViewController.View.swift */; };
 		F6BC18B1258CF7E900EF8655 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BC18B0258CF7E900EF8655 /* Library.swift */; };
 		F6D38DE3257EB43600BBD30A /* Bookie_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D38DE2257EB43600BBD30A /* Bookie_SwiftUIApp.swift */; };
 		F6D38DE5257EB43600BBD30A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D38DE4257EB43600BBD30A /* ContentView.swift */; };
@@ -21,6 +22,7 @@
 		F6778E41258DABBC000157D7 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		F69C51572581222300C7FB55 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		F69C515C25814DA200C7FB55 /* BookViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViews.swift; sourceTree = "<group>"; };
+		F6BAB25725A419AE00343D89 /* PHPickerViewController.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPickerViewController.View.swift; sourceTree = "<group>"; };
 		F6BC18B0258CF7E900EF8655 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		F6D38DDF257EB43600BBD30A /* Bookie-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bookie-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6D38DE2257EB43600BBD30A /* Bookie_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookie_SwiftUIApp.swift; sourceTree = "<group>"; };
@@ -47,6 +49,7 @@
 				F6D38DE4257EB43600BBD30A /* ContentView.swift */,
 				F69C515C25814DA200C7FB55 /* BookViews.swift */,
 				F6778E41258DABBC000157D7 /* DetailView.swift */,
+				F6BAB25725A419AE00343D89 /* PHPickerViewController.View.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				F6778E42258DABBC000157D7 /* DetailView.swift in Sources */,
 				F6D38DE3257EB43600BBD30A /* Bookie_SwiftUIApp.swift in Sources */,
 				F69C51582581222300C7FB55 /* Book.swift in Sources */,
+				F6BAB25825A419AE00343D89 /* PHPickerViewController.View.swift in Sources */,
 				F69C515D25814DA200C7FB55 /* BookViews.swift in Sources */,
 				F6BC18B1258CF7E900EF8655 /* Library.swift in Sources */,
 			);
