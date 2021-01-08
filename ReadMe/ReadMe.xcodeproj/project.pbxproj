@@ -297,6 +297,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ReadMe/Preview Content\"";
+				DEVELOPMENT_TEAM = 73DJK9R2PB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ReadMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -304,7 +305,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.ReadMe;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.safarslife.readmee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -318,6 +319,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ReadMe/Preview Content\"";
+				DEVELOPMENT_TEAM = 73DJK9R2PB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ReadMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -325,7 +327,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.ReadMe;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.safarslife.readmee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
