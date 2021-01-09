@@ -1,3 +1,4 @@
+
 import SwiftUI
 
 struct ContentView: View {
@@ -25,7 +26,12 @@ struct BookRow: View {
       destination: DetailView(book: book, image: $image)
     ) {
       HStack {
-        Book.Image(title: book.title, size: 80)
+        Book.Image(
+          uiImage: image,
+          title: book.title,
+          size: 80,
+          cornerRadius: 12
+        )
         
         TitleAndAuthorStack(
           book: book,
