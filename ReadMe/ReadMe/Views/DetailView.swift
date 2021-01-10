@@ -36,6 +36,9 @@ struct DetailView: View {
     .sheet(isPresented: $showingImagePicker) {
       PHPickerViewController.View(image: $image)
     }
+    .alert(isPresented: .constant(true)) {
+        
+    }
   }
 }
 
