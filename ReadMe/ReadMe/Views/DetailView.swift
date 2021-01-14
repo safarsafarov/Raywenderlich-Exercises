@@ -7,6 +7,7 @@ struct DetailView: View {
   let book: Book
   @Binding var image: UIImage?
   @State var showingImagePicker = false
+  @State var showingAlert = false
 
   var body: some View {
     VStack(alignment: .leading) {
@@ -37,9 +38,11 @@ struct DetailView: View {
       PHPickerViewController.View(image: $image)
     }
     .alert(isPresented: .constant(true)) {
-        .init(title: "Delete image for \(book.title)?"),
-        
-        primaryButton: .destructive(.init("Delete"), secondaryButton: <#T##Alert.Button#>)
+        .init(title: .init("Delete image for \(book.title)?"),
+              primaryButton: .destructive(.init("Delete")) {
+                image = nil
+              },
+              secondaryButton: .cancel())
     }
   }
 }
