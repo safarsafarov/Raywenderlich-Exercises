@@ -38,6 +38,7 @@ struct DetailView: View {
     }
     .alert(isPresented: .constant(true)) {
         .init(title: "Delete image for \(book.title)?"),
+        
         primaryButton: .destructive(.init("Delete"), secondaryButton: <#T##Alert.Button#>)
     }
   }
