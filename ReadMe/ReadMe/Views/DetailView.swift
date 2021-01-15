@@ -25,10 +25,12 @@ struct DetailView: View {
         )
         .scaledToFit()
 
-        Button("Update Image…") {
-          showingImagePicker = true
+        HStack {
+            Button("Update Image…") {
+              showingImagePicker = true
+            }
+            .padding()
         }
-        .padding()
       }
 
       Spacer()
@@ -37,7 +39,7 @@ struct DetailView: View {
     .sheet(isPresented: $showingImagePicker) {
       PHPickerViewController.View(image: $image)
     }
-    .alert(isPresented: .constant(true)) {
+    .alert(isPresented: $showingAlert) {
         .init(title: .init("Delete image for \(book.title)?"),
               primaryButton: .destructive(.init("Delete")) {
                 image = nil
