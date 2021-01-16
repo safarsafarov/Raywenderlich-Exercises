@@ -29,6 +29,7 @@ struct DetailView: View {
             Button("Update Image…") {
               showingImagePicker = true
             }
+            
             .padding()
         }
       }
