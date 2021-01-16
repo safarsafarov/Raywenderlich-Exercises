@@ -26,6 +26,14 @@ struct DetailView: View {
         .scaledToFit()
 
         HStack {
+            Spacer()
+            
+            Button("Delete Image…") {
+              showingAlert = true
+            }
+            
+            Spacer()
+            
             Button("Update Image…") {
               showingImagePicker = true
             }
