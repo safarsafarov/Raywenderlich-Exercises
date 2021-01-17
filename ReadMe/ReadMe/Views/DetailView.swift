@@ -39,6 +39,8 @@ struct DetailView: View {
             }
             
             .padding()
+            
+            Spacer()
         }
       }
 
