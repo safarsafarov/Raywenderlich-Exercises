@@ -24,9 +24,14 @@ struct DetailView: View {
                     cornerRadius: 16
                 )
                 .scaledToFit()
+                let updateButton =
+                    Button("Update Image…") {
+                        showingImagePicker = true
+                    }
+                    .padding()
+                
+                
                 if image != nil {
-                    
-                    
                     HStack {
                         Spacer()
                         
@@ -35,16 +40,13 @@ struct DetailView: View {
                         }
                         
                         Spacer()
-                        
-                        Button("Update Image…") {
-                            showingImagePicker = true
-                        }
-                        
-                        .padding()
-                        
+                        updateButton
                         Spacer()
                     }
+                } else {
+                    updateButton
                 }
+                
             }
             
             Spacer()
