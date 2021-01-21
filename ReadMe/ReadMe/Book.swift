@@ -6,7 +6,7 @@ struct Book: Hashable {
     init(
         title: String = "Title",
         author: String = "Author",
-        microReview: String = ""
+        microReview: String = "",
         readMe: Bool = true
     ) {
         self.title = title
