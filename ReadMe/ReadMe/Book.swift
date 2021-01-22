@@ -1,3 +1,18 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 struct Book: Hashable {
     let title: String
     let author: String
@@ -15,3 +30,21 @@ struct Book: Hashable {
         self.readMe = readMe
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
