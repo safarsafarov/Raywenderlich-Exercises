@@ -1,4 +1,5 @@
-struct Book: Hashable {
+class Book: Hashable {
+    
     let title: String
     let author: String
     var microReview: String
