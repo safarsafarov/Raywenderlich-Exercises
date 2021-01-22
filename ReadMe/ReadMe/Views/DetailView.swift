@@ -17,6 +17,7 @@ struct DetailView: View {
                 authorFont: .title2
             )
             
+            
             VStack {
                 Book.Image(
                     uiImage: image,
