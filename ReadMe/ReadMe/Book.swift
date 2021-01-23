@@ -1,4 +1,4 @@
-class Book: Hashable {
+class Book {
     
     let title: String
     let author: String
@@ -14,5 +14,18 @@ class Book: Hashable {
         self.author = author
         self.microReview = microReview
         self.readMe = readMe
+    }
+}
+
+
+extension Book: Hashable {
+    func hash(into hasher: inout Hasher) {
+        <#code#>
+    }
+}
+
+extension Book: Equatable {
+    static func == (lhs: Book, rhs: Book) -> Bool {
+        lhs === rhs
     }
 }
