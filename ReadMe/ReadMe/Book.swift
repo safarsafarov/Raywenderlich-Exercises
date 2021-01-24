@@ -18,7 +18,7 @@ class Book {
 }
 
 
-extension Book: Hashable {
+extension Book: Hashable, Identifiable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
