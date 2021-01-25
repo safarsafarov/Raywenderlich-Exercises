@@ -22,7 +22,7 @@ struct TitleAndAuthorStack: View {
   let book: Book
   let titleFont: Font
   let authorFont: Font
-
+  
   var body: some View {
     VStack(alignment: .leading) {
       Text(book.title)
