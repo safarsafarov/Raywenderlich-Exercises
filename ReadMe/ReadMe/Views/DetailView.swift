@@ -18,6 +18,7 @@ struct DetailView: View {
                     book: book,
                     titleFont: .title,
                     authorFont: .title2
+                    microReview: .title2
                 )
             }
             
