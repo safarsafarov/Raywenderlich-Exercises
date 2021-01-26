@@ -3,7 +3,7 @@
 import SwiftUI
 
 struct BookMarkButton: View {
-    var book: Book
+    @ObservableObject var book: Book
     
     var body: some View {
         let bookmark = "bookmark"

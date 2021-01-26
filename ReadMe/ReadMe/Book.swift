@@ -1,9 +1,11 @@
-class Book {
+import Combine
+
+class Book: ObservableObject {
     
     let title: String
     let author: String
-    var microReview: String
-    var readMe: Bool
+    @Published var microReview: String
+    @Published var readMe: Bool
     init(
         title: String = "Title",
         author: String = "Author",
