@@ -40,7 +40,11 @@ struct BookRow: View {
                         authorFont: .title3
                     )
                     
+                    Spacer()
+                    
                     Text(book.microReview)
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
                 }
                 .lineLimit(1)
                 
