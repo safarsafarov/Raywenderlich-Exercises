@@ -66,17 +66,17 @@ extension Book {
 
 struct Book_Previews: PreviewProvider {
     static var previews: some View {
-        HStack{
-            VStack {
+        VStack{
+            HStack {
                 TitleAndAuthorStack(
                     book: .init(),
                     titleFont: .title,
                     authorFont: .title2
                 )
-                Book.Image(title: Book().title)
-                Book.Image(title: "")
-                Book.Image(title: "📖")
             }
+            Book.Image(title: Book().title)
+            Book.Image(title: "")
+            Book.Image(title: "📖")
         }
         .previewedInAllColorSchemes
     }
