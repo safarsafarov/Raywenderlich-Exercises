@@ -68,6 +68,8 @@ struct Book_Previews: PreviewProvider {
     static var previews: some View {
         VStack{
             HStack {
+                BookMarkButton(book: .init())
+                BookMarkButton(book: .init(readMe: false))
                 TitleAndAuthorStack(
                     book: .init(),
                     titleFont: .title,
