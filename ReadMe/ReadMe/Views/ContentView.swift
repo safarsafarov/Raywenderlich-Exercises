@@ -18,7 +18,7 @@ struct ContentView: View {
 }
 
 struct BookRow: View {
-    let book: Book
+    @ObservedObject var book: Book
     @Binding var image: UIImage?
     
     var body: some View {
@@ -40,11 +40,14 @@ struct BookRow: View {
                         authorFont: .title3
                     )
                     
-                    Spacer()
+                    if !book.microReview.isEmpty{
+                        Spacer()
+                        Text(book.microReview)
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                    }
                     
-                    Text(book.microReview)
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
+                    
                 }
                 .lineLimit(1)
                 
