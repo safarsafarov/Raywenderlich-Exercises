@@ -6,13 +6,16 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List(library.sortedBooks) { book in
-                BookRow(
-                    book: book,
-                    image: $library.uiImages[book]
-                )
+            
+            List(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
+                ForEach(library.sortedBooks) { book in
+                    BookRow(
+                        book: book,
+                        image: $library.uiImages[book]
+                    )
+                }
+                .navigationBarTitle("My Library")
             }
-            .navigationBarTitle("My Library")
         }
     }
 }
