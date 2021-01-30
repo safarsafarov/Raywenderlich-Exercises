@@ -7,15 +7,26 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             
-            List(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
+            List {
+                Button {
+                    
+                } label: {
+                    VStack(spacing: 6) {
+                        Image(systemName: "book.circle")
+                            .font(.system(size: 60))
+                        Text("Add New Book")
+                            .font(.title2)
+                    }
+                }
+                .buttonStyle(BorderlessButtonStyle())
                 ForEach(library.sortedBooks) { book in
                     BookRow(
                         book: book,
                         image: $library.uiImages[book]
                     )
                 }
-                .navigationBarTitle("My Library")
             }
+            .navigationBarTitle("My Library")
         }
     }
 }
