@@ -1,8 +1,15 @@
 import SwiftUI
 
 struct NewBookView: View {
+    
+    @ObservedObject var book = Book(title: "", author: "")
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .center, spacing: nil, content: {
+            TextField("Title", text: $book.title)
+            TextField("Author", text: $book.author)
+        })
+        .padding()
     }
 }
 

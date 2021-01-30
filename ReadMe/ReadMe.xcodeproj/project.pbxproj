@@ -17,6 +17,7 @@
 		49A174EE250B8CF4002A21FA /* Book views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A174ED250B8CF4002A21FA /* Book views.swift */; };
 		49DC877A250C033800D3EE84 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC8779250C033800D3EE84 /* Library.swift */; };
 		F6FEDE5A25C56D6B00077BD3 /* NewBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FEDE5925C56D6B00077BD3 /* NewBookView.swift */; };
+		F6FEDE5D25C571A900077BD3 /* ReviewAndImageStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FEDE5C25C571A900077BD3 /* ReviewAndImageStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		49A174ED250B8CF4002A21FA /* Book views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book views.swift"; sourceTree = "<group>"; };
 		49DC8779250C033800D3EE84 /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		F6FEDE5925C56D6B00077BD3 /* NewBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookView.swift; sourceTree = "<group>"; };
+		F6FEDE5C25C571A900077BD3 /* ReviewAndImageStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAndImageStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				0A9F0303250A3BD300E97EC8 /* ContentView.swift */,
 				49A174ED250B8CF4002A21FA /* Book views.swift */,
 				497CD28D250D97B300A40C24 /* DetailView.swift */,
+				F6FEDE5C25C571A900077BD3 /* ReviewAndImageStack.swift */,
 				492677E5250EA9F500009828 /* PHPickerViewController.View.swift */,
 				F6FEDE5925C56D6B00077BD3 /* NewBookView.swift */,
 			);
@@ -171,6 +174,7 @@
 				F6FEDE5A25C56D6B00077BD3 /* NewBookView.swift in Sources */,
 				49DC877A250C033800D3EE84 /* Library.swift in Sources */,
 				0A9F0302250A3BD300E97EC8 /* ReadMeApp.swift in Sources */,
+				F6FEDE5D25C571A900077BD3 /* ReviewAndImageStack.swift in Sources */,
 				49A174EB250B4A89002A21FA /* Book.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
