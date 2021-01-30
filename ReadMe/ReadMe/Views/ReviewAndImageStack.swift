@@ -61,5 +61,7 @@ struct ReviewAndImageStack: View {
 struct ReviewAndImageStack_Previews: PreviewProvider {
     static var previews: some View {
         ReviewAndImageStack(book: .init(), image: .constant(nil))
+            .padding(.horizontal)
+            .previewedInAllColorSchemes
     }
 }
