@@ -17,7 +17,7 @@ struct NewBookView: View {
             .toolbar {
                 ToolbarItem(placement: .bottomBar) {
                     Button("Add to Library") {
-                        
+                        library.addNewBook(book, image: image)
                     }
                 }
             }
