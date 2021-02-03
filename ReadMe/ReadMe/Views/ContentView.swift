@@ -3,7 +3,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var addingNewBook = false
-    @State var library = Library()
+    @EnvironmentObject var library: Library()
     
     var body: some View {
         NavigationView {
@@ -87,6 +87,7 @@ struct BookRow: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(Library())
             .previewedInAllColorSchemes
     }
 }
