@@ -3,7 +3,7 @@ import SwiftUI
 
 struct DetailView: View {
     @ObservedObject var book: Book
-    @Binding var image: UIImage?
+    @EnvironmentObject var library: Library
    
     
     var body: some View {
@@ -19,7 +19,7 @@ struct DetailView: View {
             }
             
             
-            ReviewAndImageStack(book: book, image: $image)
+            ReviewAndImageStack(book: book, image: $library.uiImages[book])
             
         }
         .padding()
@@ -29,7 +29,8 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(book: .init(), image: .constant(nil))
+        DetailView(book: .init())
+            .environmentObject(Library())
             .previewedInAllColorSchemes
     }
 }
