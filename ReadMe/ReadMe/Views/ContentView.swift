@@ -3,7 +3,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var addingNewBook = false
-    @EnvironmentObject var library: Library()
+    @EnvironmentObject var library: Library
     
     var body: some View {
         NavigationView {
@@ -29,10 +29,7 @@ struct ContentView: View {
                 )
                 
                 ForEach(library.sortedBooks) { book in
-                    BookRow(
-                        book: book,
-                        image: $library.uiImages[book]
-                    )
+                    BookRow(book: book)
                 }
             }
             .navigationBarTitle("My Library")
@@ -42,15 +39,15 @@ struct ContentView: View {
 
 struct BookRow: View {
     @ObservedObject var book: Book
-    @Binding var image: UIImage?
+    @EnvironmentObject var library: Library
     
     var body: some View {
         NavigationLink(
-            destination: DetailView(book: book, image: $image)
+            destination: DetailView(book: book)
         ) {
             HStack {
                 Book.Image(
-                    uiImage: image,
+                    uiImage: library.uiImages[book],
                     title: book.title,
                     size: 80,
                     cornerRadius: 12
