@@ -4,6 +4,7 @@ struct NewBookView: View {
     @ObservedObject var book = Book(title: "", author: "")
     @State var image: UIImage? = nil
     @EnvironmentObject var library: Library
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         NavigationView{
@@ -18,7 +19,11 @@ struct NewBookView: View {
                 ToolbarItem(placement: .bottomBar) {
                     Button("Add to Library") {
                         library.addNewBook(book, image: image)
+                        presentationMode.wrappedValue.dismiss()
                     }
+                    .disabled(
+                        [book.title, book.author].contains(where: \.isEmpty)
+                    )
                 }
             }
         }
