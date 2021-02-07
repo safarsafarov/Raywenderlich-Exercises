@@ -6,11 +6,12 @@ enum Section {
     case finished
 }
 
-class Library: ObservableObject {
+final class Library: ObservableObject {
     var sortedBooks: [Book] { booksCache }
     
     var manuallySortedBooks: [Section: [Book]] {
         Dictionary(grouping: booksCache, by: \.readMe)
+            .mapKeys(Section.init)
     }
     
     /// Adds a new book at the start of the library's manually-sorted books.
@@ -18,6 +19,8 @@ class Library: ObservableObject {
         booksCache.insert(book, at: 0)
         uiImages[book] = image
     }
+    
+    @Published var uiImages: [Book: UIImage] = [:]
     
     /// An in-memory cache of the manually-sorted books that are persistently stored.
     @Published private var booksCache: [Book] = [
@@ -34,10 +37,10 @@ class Library: ObservableObject {
         .init(title: "What to Say When You Talk to Yourself", author: "Shad Helmstetter")
     ]
     
-    @Published var uiImages: [Book: UIImage] = [:]
+    
 }
 
-extension Section {
+private extension Section {
     init(readMe: Bool) {
         self = readMe ? .readMe : .finished
     }
@@ -45,6 +48,10 @@ extension Section {
 
 
 private extension Dictionary {
+    /// Same values, corresponding to map ped keys.
+    ///
+    /// – Parameter transform: Accepts each key of the dictionary as its parameter and returns a key for the new dictionary.
+    /// – Postcondition: The collection of transofrmed keys must not contain duplicates.
     func mapKeys<Transformed>(
         _ transform: (Key) throws -> Transformed
     ) rethrows -> [Transformed: Value] {
