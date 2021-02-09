@@ -12,12 +12,12 @@
 		0A9F0306250A3BD400E97EC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9F0305250A3BD400E97EC8 /* Assets.xcassets */; };
 		0A9F0309250A3BD400E97EC8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9F0308250A3BD400E97EC8 /* Preview Assets.xcassets */; };
 		492677E6250EA9F500009828 /* PHPickerViewController.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492677E5250EA9F500009828 /* PHPickerViewController.View.swift */; };
+		495D4B4E2514F47100DD91E7 /* NewBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495D4B4D2514F47100DD91E7 /* NewBookView.swift */; };
+		495D4B522515066E00DD91E7 /* ReviewAndImageStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495D4B512515066E00DD91E7 /* ReviewAndImageStack.swift */; };
 		497CD28E250D97B300A40C24 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497CD28D250D97B300A40C24 /* DetailView.swift */; };
 		49A174EB250B4A89002A21FA /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A174EA250B4A89002A21FA /* Book.swift */; };
 		49A174EE250B8CF4002A21FA /* Book views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A174ED250B8CF4002A21FA /* Book views.swift */; };
 		49DC877A250C033800D3EE84 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC8779250C033800D3EE84 /* Library.swift */; };
-		F6FEDE5A25C56D6B00077BD3 /* NewBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FEDE5925C56D6B00077BD3 /* NewBookView.swift */; };
-		F6FEDE5D25C571A900077BD3 /* ReviewAndImageStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FEDE5C25C571A900077BD3 /* ReviewAndImageStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,12 +28,12 @@
 		0A9F0308250A3BD400E97EC8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0A9F030A250A3BD400E97EC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		492677E5250EA9F500009828 /* PHPickerViewController.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPickerViewController.View.swift; sourceTree = "<group>"; };
+		495D4B4D2514F47100DD91E7 /* NewBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookView.swift; sourceTree = "<group>"; };
+		495D4B512515066E00DD91E7 /* ReviewAndImageStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAndImageStack.swift; sourceTree = "<group>"; };
 		497CD28D250D97B300A40C24 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		49A174EA250B4A89002A21FA /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		49A174ED250B8CF4002A21FA /* Book views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book views.swift"; sourceTree = "<group>"; };
 		49DC8779250C033800D3EE84 /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
-		F6FEDE5925C56D6B00077BD3 /* NewBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookView.swift; sourceTree = "<group>"; };
-		F6FEDE5C25C571A900077BD3 /* ReviewAndImageStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAndImageStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,10 +90,10 @@
 			children = (
 				0A9F0303250A3BD300E97EC8 /* ContentView.swift */,
 				49A174ED250B8CF4002A21FA /* Book views.swift */,
+				495D4B4D2514F47100DD91E7 /* NewBookView.swift */,
 				497CD28D250D97B300A40C24 /* DetailView.swift */,
-				F6FEDE5C25C571A900077BD3 /* ReviewAndImageStack.swift */,
+				495D4B512515066E00DD91E7 /* ReviewAndImageStack.swift */,
 				492677E5250EA9F500009828 /* PHPickerViewController.View.swift */,
-				F6FEDE5925C56D6B00077BD3 /* NewBookView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,10 +171,10 @@
 				497CD28E250D97B300A40C24 /* DetailView.swift in Sources */,
 				492677E6250EA9F500009828 /* PHPickerViewController.View.swift in Sources */,
 				0A9F0304250A3BD300E97EC8 /* ContentView.swift in Sources */,
-				F6FEDE5A25C56D6B00077BD3 /* NewBookView.swift in Sources */,
+				495D4B4E2514F47100DD91E7 /* NewBookView.swift in Sources */,
 				49DC877A250C033800D3EE84 /* Library.swift in Sources */,
 				0A9F0302250A3BD300E97EC8 /* ReadMeApp.swift in Sources */,
-				F6FEDE5D25C571A900077BD3 /* ReviewAndImageStack.swift in Sources */,
+				495D4B522515066E00DD91E7 /* ReviewAndImageStack.swift in Sources */,
 				49A174EB250B4A89002A21FA /* Book.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,7 +305,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ReadMe/Preview Content\"";
-				DEVELOPMENT_TEAM = 73DJK9R2PB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ReadMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -313,7 +312,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.safarslife.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.ReadMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -327,7 +326,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ReadMe/Preview Content\"";
-				DEVELOPMENT_TEAM = 73DJK9R2PB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ReadMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -335,7 +333,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.safarslife.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.ReadMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
