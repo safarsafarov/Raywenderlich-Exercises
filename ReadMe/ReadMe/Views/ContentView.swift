@@ -28,8 +28,8 @@ struct ContentView: View {
                     content: NewBookView.init
                 )
                 
-                ForEach(library.sortedBooks) { book in
-                    BookRow(book: book)
+                ForEach(Section.allCases, id: \.self) {
+                    SectionView(section: $0)
                 }
             }
             .navigationBarTitle("My Library")
@@ -80,6 +80,27 @@ struct BookRow: View {
         }
     }
 }
+
+
+private struct SectionView: View {
+    let section : Section
+    @EnvironmentObject var library: Library
+    
+    var body: some View {
+        if let book = library.manuallySortedBooks[section] {
+            SwiftUI.Section(
+                header: Image("BookTexture")
+                    .resizable()
+                    .scaledToFit()
+            ) {
+                ForEach(books) {
+                    BookRow(book: $0)
+                }
+            }
+        }
+    }
+}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

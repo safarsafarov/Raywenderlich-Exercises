@@ -1,7 +1,7 @@
 import Combine
 import class UIKit.UIImage
 
-enum Section {
+enum Section: CaseIterable {
     case readMe
     case finished
 }
