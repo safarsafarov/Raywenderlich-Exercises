@@ -1,5 +1,3 @@
-
-
 import SwiftUI
 
 struct ContentView: View {
@@ -93,7 +91,7 @@ private struct SectionView: View {
       return "Finished!"
     }
   }
-
+    
   var body: some View {
     if let books = library.manuallySortedBooks[section] {
       SwiftUI.Section(
