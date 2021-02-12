@@ -31,6 +31,9 @@ struct ContentView: View {
         ForEach(Section.allCases, id: \.self) {
           SectionView(section: $0)
         }
+        .onDelete { indexSet in
+            
+        })
       }
       .navigationBarTitle("My Library")
     }
