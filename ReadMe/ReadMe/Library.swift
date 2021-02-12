@@ -46,9 +46,20 @@ final class Library: ObservableObject {
     .init(title: "Drawing People", author: "Barbara Bradley"),
     .init(title: "What to Say When You Talk to Yourself", author: "Shad Helmstetter")
   ]
+    
+    /// Forwards individual book changes to be considered Library changes.
+    private var cancellables: Set<AnyCancellable> = []
 }
 
 // MARK: - private
+
+private extension Library {
+    func storeCancellable(for book: Book) {
+        book.$readMe.sink { _ in
+            self.objectWillChange.send()
+        }
+    }
+}
 
 private extension Section {
   init(readMe: Bool) {
