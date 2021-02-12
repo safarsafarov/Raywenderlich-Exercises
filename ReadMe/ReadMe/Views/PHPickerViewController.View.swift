@@ -1,5 +1,3 @@
-
-
 import PhotosUI
 import SwiftUI
 

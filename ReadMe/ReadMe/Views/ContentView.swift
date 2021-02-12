@@ -28,14 +28,43 @@ struct ContentView: View {
           content: NewBookView.init
         )
 
-        ForEach(Section.allCases, id: \.self) {
-          SectionView(section: $0)
-        }
-        .onDelete { indexSet in
-            
+        switch library.sortStyle {
+        case .title, .author:
+          BookRows(data: library.sortedBooks, section: nil)
+        case .manual:
+          ForEach(Section.allCases, id: \.self) {
+            SectionView(section: $0)
+          }
         }
       }
+      .toolbar {
+        ToolbarItem(placement: .navigationBarLeading) {
+          Menu("Sort") {
+            Picker("Sort Style", selection: $library.sortStyle) {
+              ForEach(SortStyle.allCases, id: \.self) { sortStyle in
+                Text("\(sortStyle)".capitalized)
+              }
+            }
+          }
+        }
+        ToolbarItem(content: EditButton.init)
+      }
       .navigationBarTitle("My Library")
+    }
+  }
+}
+
+private struct BookRows: DynamicViewContent {
+  let data: [Book]
+  let section: Section?
+  @EnvironmentObject var library: Library
+
+  var body: some View {
+    ForEach(data) {
+      BookRow(book: $0)
+    }
+    .onDelete { indexSet in
+      library.deleteBooks(atOffsets: indexSet, section: section)
     }
   }
 }
@@ -94,7 +123,7 @@ private struct SectionView: View {
       return "Finished!"
     }
   }
-    
+
   var body: some View {
     if let books = library.manuallySortedBooks[section] {
       SwiftUI.Section(
@@ -108,9 +137,13 @@ private struct SectionView: View {
           }
           .listRowInsets(.init())
       ) {
-        ForEach(books) {
-          BookRow(book: $0)
-        }
+        BookRows(data: books, section: section)
+          .onMove { indices, newOffset in
+            library.moveBooks(
+              oldOffsets: indices, newOffset: newOffset,
+              section: section
+            )
+          }
       }
     }
   }

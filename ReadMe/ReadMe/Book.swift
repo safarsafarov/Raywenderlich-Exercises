@@ -1,7 +1,6 @@
-
 import Combine
 
-class Book: ObservableObject {
+class Book: Codable, ObservableObject {
   @Published var title: String
   @Published var author: String
   @Published var microReview: String
