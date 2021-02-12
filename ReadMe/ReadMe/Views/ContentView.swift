@@ -33,7 +33,7 @@ struct ContentView: View {
         }
         .onDelete { indexSet in
             
-        })
+        }
       }
       .navigationBarTitle("My Library")
     }
