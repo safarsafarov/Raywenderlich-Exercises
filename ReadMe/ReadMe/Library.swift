@@ -55,9 +55,10 @@ final class Library: ObservableObject {
 
 private extension Library {
     func storeCancellable(for book: Book) {
-        book.$readMe.sink { _ in
-            self.objectWillChange.send()
+        book.$readMe.sink { [unowned self] _ in
+            objectWillChange.send()
         }
+        .store(in: &cancellables)
     }
 }
 
