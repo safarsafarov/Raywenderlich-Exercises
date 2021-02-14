@@ -1,3 +1,31 @@
+/// Copyright (c) 2020 Razeware LLC
+///
+/// Permission is hereby granted, free of charge, to any person obtaining a copy
+/// of this software and associated documentation files (the "Software"), to deal
+/// in the Software without restriction, including without limitation the rights
+/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+/// copies of the Software, and to permit persons to whom the Software is
+/// furnished to do so, subject to the following conditions:
+///
+/// The above copyright notice and this permission notice shall be included in
+/// all copies or substantial portions of the Software.
+///
+/// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
+/// distribute, sublicense, create a derivative work, and/or sell copies of the
+/// Software in any work that is designed, intended, or marketed for pedagogical or
+/// instructional purposes related to programming, coding, application development,
+/// or information technology.  Permission for such use, copying, modification,
+/// merger, publication, distribution, sublicensing, creation of derivative works,
+/// or sale is expressly withheld.
+///
+/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+/// THE SOFTWARE.
+
 import Combine
 import Foundation
 import struct SwiftUI.PreviewDevice
@@ -8,9 +36,33 @@ enum Section: CaseIterable {
   case finished
 }
 
+enum SortStyle: CaseIterable {
+  case title
+  case author
+  case manual
+}
+
 final class Library: ObservableObject {
-  var sortedBooks: [Book] {
-    get { booksCache }
+  @Published var sortStyle: SortStyle = .manual
+
+  /// The library's books, sorted by its `sortStyle`.
+  private(set) var sortedBooks: [Book] {
+    get {
+      switch sortStyle {
+      case .title:
+        return booksCache.sorted {
+          ["a ", "the "].reduce($0.title.lowercased()) { title, article in
+            title.without(prefix: article) ?? title
+          }
+        }
+      case .author:
+        return booksCache.sorted {
+          PersonNameComponentsFormatter().personNameComponents(from: $0.author) ?? .init()
+        }
+      case .manual:
+        return booksCache
+      }
+    }
     set {
       booksCache.removeAll { book in
         !newValue.contains(book)
@@ -18,7 +70,7 @@ final class Library: ObservableObject {
     }
   }
 
-  var manuallySortedBooks: [Section: [Book]] {
+  private(set) var manuallySortedBooks: [Section: [Book]] {
     get {
       Dictionary(grouping: booksCache, by: \.readMe)
         .mapKeys(Section.init)
@@ -188,8 +240,7 @@ private extension Library {
   func storeCancellables(for book: Book) {
     cancellables.formUnion([
       book.$readMe.sink { [unowned self] _ in
-        objectWillChange.send()
-        saveBooks()
+        manuallySortedBooks = manuallySortedBooks
       },
       book.$microReview.sink { [unowned self] _ in
         saveBooks()
@@ -241,6 +292,35 @@ private extension PreviewDevice {
   /// Whether this code is running in a SwiftUI preview.
   static var inXcode: Bool {
     ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1"
+  }
+}
+
+private extension Sequence {
+  /// Sorted by a common `Comparable` value.
+  func sorted<Comparable: Swift.Comparable>(
+    _ comparable: (Element) throws -> Comparable
+  ) rethrows -> [Element] {
+    try sorted(comparable, <)
+  }
+
+  /// Sorted by a common `Comparable` value, and sorting closure.
+  func sorted<Comparable: Swift.Comparable>(
+    _ comparable: (Element) throws -> Comparable,
+    _ areInIncreasingOrder: (Comparable, Comparable) throws -> Bool
+  ) rethrows -> [Element] {
+    try sorted {
+      try areInIncreasingOrder(comparable($0), comparable($1))
+    }
+  }
+}
+
+private extension String {
+  ///- Returns: nil if not prefixed with `prefix`
+  func without(prefix: String) -> Self? {
+    guard hasPrefix(prefix)
+    else { return nil }
+
+    return .init(dropFirst(prefix.count))
   }
 }
 
@@ -296,5 +376,70 @@ private extension EncodingError {
         debugDescription: debugDescription
       )
     )
+  }
+}
+
+// MARK: - PersonNameComponents: Comparable
+
+extension PersonNameComponents: Comparable {
+  public static func < (components0: Self, components1: Self) -> Bool {
+    var fallback: Bool {
+      [\PersonNameComponents.givenName, \.middleName].contains {
+        Optional(
+          optionals: (components0[keyPath: $0], components1[keyPath: $0])
+        )
+        .map { $0.lowercased().isLessThan($1.lowercased(), whenEqual: false) }
+        ?? false
+      }
+    }
+
+    switch (
+      components0.givenName?.lowercased(), components0.familyName?.lowercased(),
+      components1.givenName?.lowercased(), components1.familyName?.lowercased()
+    ) {
+    case let (
+      _, familyName0?,
+      _, familyName1?
+    ):
+      return familyName0.isLessThan(familyName1, whenEqual: fallback)
+    case (
+      _, let familyName0?,
+      let givenName1?, nil
+    ):
+      return familyName0.isLessThan(givenName1, whenEqual: fallback)
+    case (
+      let givenName0?, nil,
+      _, let familyName1?
+    ):
+      return givenName0.isLessThan(familyName1, whenEqual: fallback)
+    default:
+      return fallback
+    }
+  }
+}
+
+private extension Comparable {
+  /// Like `<`, but with a default for the case when `==` evaluates to `true`.
+  func isLessThan(
+    _ comparable: Self,
+    whenEqual default: @autoclosure () -> Bool
+  ) -> Bool {
+    self == comparable
+    ? `default`()
+    : self < comparable
+  }
+}
+
+private extension Optional {
+  /// Exchange two optionals for a single optional tuple.
+  /// - Returns: `nil` if either tuple element is `nil`.
+  init<Wrapped0, Wrapped1>(optionals: (Wrapped0?, Wrapped1?))
+  where Wrapped == (Wrapped0, Wrapped1) {
+    switch optionals {
+    case let (wrapped0?, wrapped1?):
+      self = (wrapped0, wrapped1)
+    default:
+      self = nil
+    }
   }
 }
